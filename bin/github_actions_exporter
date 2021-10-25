@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/github_actions_exporter/cli'
+
+cli = GitHubActionsExporter::CLI.new
+
+Thread.new do
+  cli.run
+end
+
+require 'rack'
+require 'sinatra'
+require 'prometheus/middleware/exporter'
+
+use Rack::Deflater
+use Prometheus::Middleware::Exporter
+
+set :port, 9978
+
+get '/' do
+  'OK'
+end
