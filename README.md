@@ -74,3 +74,4 @@ If you want to set up solargraph (recommended!), then you'll need to:
 2. `bundle exec solargraph bundle`
 
 Then configure your editor to use it.
+
