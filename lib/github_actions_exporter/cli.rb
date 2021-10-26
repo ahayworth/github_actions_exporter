@@ -51,6 +51,19 @@ module GitHubActionsExporter
         h[repo.full_name] = GitHubActionsExporter::Tasks::ListWorkflowRuns.new(local_gh, logger)
       end
 
+      threads << Thread.new do
+        loop do
+          sleep 300
+
+          repo_workers.each do |repo, task|
+            if @options[:"pem-file"]
+              logger.debug("[#{repo}] refreshing app installation token")
+              task.client.access_token = task.client.regenerate_installation_access_token
+            end
+          end
+        end
+      end
+
       repos.each do |repo|
         threads << Thread.new do
           loop do

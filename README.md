@@ -45,7 +45,7 @@ Metrics will be exposed on `http://localhost:9978` by default.
 ## Roadmap
 
 - [ ] Implement `--repositories` flag
-- [ ] Implement GitHub App authentication refresh
+- [x] Implement GitHub App authentication refresh
 - [ ] Add tests
 - [ ] Clean up threading code and move out of the `CLI` namespace
 - [ ] Implement worker-pool paradigm to limit resource consumption
