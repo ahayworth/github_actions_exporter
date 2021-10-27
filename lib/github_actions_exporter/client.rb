@@ -4,7 +4,7 @@ require 'delegate'
 require 'logger'
 
 require 'faraday-http-cache'
-require 'httpx/adapters/faraday'
+# require 'httpx/adapters/faraday'
 require 'openssl'
 require 'jwt'
 require 'octokit'
@@ -37,7 +37,7 @@ module GitHubActionsExporter
         shared_cache: false
       )
 
-      new_middleware.adapter :httpx
+      # new_middleware.adapter :httpx
 
       Octokit.configure do |c|
         c.middleware = new_middleware

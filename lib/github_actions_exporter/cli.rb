@@ -112,7 +112,6 @@ module GitHubActionsExporter
           logger.debug(metrics.to_s)
           logger.debug(rl)
 
-          logger.debug("Sleeping #{@options[:interval]}")
           sleep @options[:interval]
         end
       end
