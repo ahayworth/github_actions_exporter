@@ -2,6 +2,8 @@
 
 require_relative '../lib/github_actions_exporter/cli'
 
+STDOUT.sync = true
+
 cli = GitHubActionsExporter::CLI.new
 
 Thread.new do
