@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
+    activesupport (6.1.7.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -39,7 +39,7 @@ GEM
     http-2-next (0.5.0)
     httpx (0.18.0)
       http-2-next (>= 0.4.1)
-    i18n (1.8.10)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     jwt (2.3.0)
@@ -47,11 +47,13 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    minitest (5.14.4)
+    minitest (5.18.0)
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.12.5-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -121,16 +123,16 @@ GEM
       yard (~> 0.9, >= 0.9.24)
     thor (1.1.0)
     tilt (2.0.10)
-    tzinfo (2.0.4)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     webrick (1.7.0)
-    workers (0.6.1)
     yard (0.9.26)
-    zeitwerk (2.4.2)
+    zeitwerk (2.6.7)
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   activesupport (~> 6.1)
@@ -143,10 +145,9 @@ DEPENDENCIES
   prometheus-client (~> 2.1)
   rack (~> 2.2)
   rspec (~> 3.10)
-  sinatra
+  sinatra (~> 2.1)
   solargraph (~> 0.44)
-  webrick
-  workers (~> 0.6)
+  webrick (~> 1.7)
 
 BUNDLED WITH
    2.2.22
